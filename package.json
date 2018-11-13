@@ -1,0 +1,29 @@
+{
+  "name": "hapi-book-store",
+  "version": "1.0.0",
+  "description": "Simple book store api using Hapi JS",
+  "main": "src/start.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sahriartoufiq/hapi-book-store.git"
+  },
+  "author": "Sahriar Toufiq",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sahriartoufiq/hapi-book-store/issues"
+  },
+  "homepage": "https://github.com/sahriartoufiq/hapi-book-store#readme",
+  "dependencies": {
+    "hapi": "^17.7.0",
+    "logform": "^1.10.0",
+    "module-alias": "^2.1.0",
+    "winston": "^3.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.9.0",
+    "eslint-config-google": "^0.11.0"
+  }
+}
