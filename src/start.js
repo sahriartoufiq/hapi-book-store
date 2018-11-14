@@ -1,3 +1,5 @@
 'use strict';
 
-require('./config/global/setup');
+const Server = require('./server');
+
+Server().initiate();
