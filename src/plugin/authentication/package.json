@@ -1,0 +1,8 @@
+{
+  "name": "auth",
+  "version": "1.0.0",
+  "description": "user related api",
+  "main": "plugin.js",
+  "author": "Sahriar Toufiq",
+  "license": "UNLICENSED"
+}

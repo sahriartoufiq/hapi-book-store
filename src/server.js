@@ -18,6 +18,7 @@ async function initiate() {
             , console.log);
 
     await server.register(global.requirePlugin('user/plugin'));
+    await server.register(global.requirePlugin('authentication/plugin'));
 
     await server.start();
 

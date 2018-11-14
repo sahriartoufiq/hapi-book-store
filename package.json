@@ -17,7 +17,11 @@
   },
   "homepage": "https://github.com/sahriartoufiq/hapi-book-store#readme",
   "dependencies": {
+    "boom": "^7.2.2",
     "hapi": "^17.7.0",
+    "hapi-auth-jwt2": "^8.1.0",
+    "joi": "^14.0.6",
+    "jsonwebtoken": "^8.4.0",
     "logform": "^1.10.0",
     "module-alias": "^2.1.0",
     "mongoose": "^5.3.12",
