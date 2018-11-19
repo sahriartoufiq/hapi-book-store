@@ -3,6 +3,8 @@
 const Mongo = require('mongoose');
 const Schema = Mongo.Schema;
 
+Mongo.Promise = require('bluebird');
+
 const userSchema = new Schema({
         firstName: String,
         lastName: String,

@@ -10,7 +10,9 @@ module.exports = [
         path: '/auth',
         handler: Handler.authenticate,
         config: {
-            auth: false
+            auth: {
+                scope: ['Admin']
+            }
         }
     }
 ];

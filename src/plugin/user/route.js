@@ -6,9 +6,21 @@ module.exports = [
     {
         method: 'POST',
         path: '/add/user',
-        handler: Handler.addUser,
+
         config: {
-            auth: false
+            auth: {
+                scope: [`admin`]
+            },
+            handler: Handler.addUser
         }
+
+
+        // config: {
+        //     auth: {
+        //             scope: ['Admin']
+        //
+        //     },
+        //     handler: Handler.addUser,
+        // }
     }
 ];

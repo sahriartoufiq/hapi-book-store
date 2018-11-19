@@ -6,9 +6,11 @@ const Boom = require('boom');
 
 module.exports = {
 
-    addUser: function (req, h) {
+    addUser:  function (req, h) {
 
-        return Service.saveUser(req.payload);
+        return Service.saveUser(req.payload)
+            .then((user) => user)
+            .catch((err) => Boom.boomify(err));
 
     }
 };

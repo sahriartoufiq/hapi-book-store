@@ -7,7 +7,6 @@ module.exports = {
 
     getUser: function (username) {
 
-        return User.findOne({username: username});
-
+        return User.findOne({username: username}).exec();
     }
 };

@@ -3,7 +3,7 @@
 const JWT = require('jsonwebtoken');
 const Logger = global.requireConfig('logger/logger');
 const Service = require('./service');
-const Boom = require('boom');
+const BCrypt = require('bcrypt');
 
 module.exports = {
 
@@ -11,20 +11,21 @@ module.exports = {
 
         let {username, password} = req.payload;
 
-        Service.getUser(username)
+        return Service.getUser(username)
             .then((user) => {
-                //
-                // Logger.info(user);
-                //
-                // return {
-                //     message: 'success'
-                // }
+                Logger.info(user);
+                if (user != null) {
+                    if (BCrypt.compare(password, user.password)) {
 
-                if (user.password == password) {
-                    return 'token: ' + JWT.sign(user.id,
-                        'secret!');
+                        return 'token: ' + JWT.sign({
+                                _id: user.id,
+                            username: user.username,
+                            scope: ['Admin']
+                            },
+                            process.env.secret);
+                    }
                 }
+
             }).catch((err) => Logger.info(err));
     }
 };
-

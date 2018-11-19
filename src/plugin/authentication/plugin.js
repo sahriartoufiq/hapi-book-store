@@ -1,7 +1,8 @@
 'use strict';
 
+require('./cryptoGenerator');
 const Route = require('./route');
-
+const JWT = require('hapi-auth-jwt2');
 const validate = async function (decoded, req) {
     /** TODO validation code **/
     return {
@@ -11,19 +12,22 @@ const validate = async function (decoded, req) {
 
 module.exports = {
     pkg: require('./package'),
-    register: async function (server, options) {
+    register: async function (server, options, next) {
 
-        server.register(require('hapi-auth-jwt2'));
+       await server.register(JWT);
 
-        server.auth.strategy('jwt', 'jwt', {
-            key: 'secret!',
+       await server.auth.strategy('jwt', 'jwt', {
+            key: process.env.secret,
             validate: validate,
             verifyOptions: {algorithms: ['HS256']}
         });
 
-        server.auth.default('jwt');
+       await server.auth.default('jwt');
 
-        server.route(Route);
+       await server.route(Route);
+
+        next();
 
     }
 };
+
