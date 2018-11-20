@@ -20,7 +20,7 @@ module.exports = {
                         return 'token: ' + JWT.sign({
                                 _id: user.id,
                             username: user.username,
-                            scope: ['Admin']
+                            scope: ['admin', 'staff']
                             },
                             process.env.secret);
                     }

@@ -17,8 +17,11 @@ async function initiate() {
         .then(() => console.log('connected to Mongo server')
             , console.log);
 
-    await server.register(global.requirePlugin('user/plugin'));
-    await server.register(global.requirePlugin('authentication/plugin'));
+    // await server.register(global.requirePlugin('user'));
+    // await server.register(global.requirePlugin('auth'));
+
+
+    await server.register(global.requirePlugin('plugins'));
 
     await server.start();
 
